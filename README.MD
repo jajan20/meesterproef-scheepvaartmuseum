@@ -26,6 +26,7 @@ Scheepvaart Museum is going to host a new exhibit about one of the most prestige
     - [Report Component](#report-component)
     - [Intersection Observer](#intersection-observer)
     - [Natural Language Form](#natural-language-form)
+- [Learning Goals](#learning-goals)
 - [After word](#after-word)
 - [Contributers](#contributers)
 
@@ -377,7 +378,7 @@ submitBtn.classList.add('hidden')
 
 Nothing fancy with Javascript just clean CSS
 
-```css
+CSS
 * {
   font-family: "Open Sans", sans-serif;
   margin: 0;
@@ -581,6 +582,21 @@ The idea was for users to input information step by step in a way that didn't fe
 
 Even though in the end my code wasn't used, the concept started to live. Servin and Mees made a beautiful input field.
 I hope that one day my form is as fluid as theirs.
+
+## Learning Goals
+- [x] Learn to write in one specific code style
+Before this project I would just write some code and if it worked? it worked.
+But during these five weeks, I wanted to learn how to be consistent with my coding and the rest of the group.
+
+- [x] Learning ES6
+with Web app from scratch, I wrote code just for the sake of making my app work. With this project, I really wanted to learn how to write
+fancy new code. First I would just make my component work, then I would refactor my code using ES6
+
+- [x] Working with components (CSS, javascript)
+During Web app from scratch, I barely touched the surface of component-based programming. With our story sharing platform in combination with the tooling, I could learn a lot. And I did, every component had a separate CSS, js, ejs file. exporting everything and then combining them into one document.
+
+- [x] Learning to be more assertive, asking for feedback etc.
+This was a bit harder since I have the feeling I'm way behind other people. Asking for feedback is hard cause I feel insecure about my code and feel like I should know this already. Still, Mees, Mo, and Servin were really helpful and had a lot of great tips.
 
 ## Afterword
 In conclusion, I'd like to reflect on the five weeks working with a group of six classmates. At first, I wasn't so sure if it was a good idea for me to work in a group. Because half of the class is farther in terms of code and I believed working in a group would make it that much harder.
