@@ -73,7 +73,7 @@ During the first briefing with Ernst we decided to tackle this project as a grou
 ### Scrum
 Scrum was the best solution for us. We sat down and brainstormed about all the different aspects the project would need. Later we used the Trello service to better track everything.
 
-![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/scrum.jpg?raw=true)
+![](/Users/jamie/Downloads/scrum.jpg)
 
 ### Briefings
 As a group we figured that it would be in the best interest for the client, as well as for us to hold weekly briefings about our progress. This helped with our planning. Every thursday afternoon we would send a summary of our work in progress and every friday morning we sat down and discussed our next steps.
@@ -266,9 +266,82 @@ Nothing fancy with Javascript just clean CSS
 }
 ```
 
+### Intersection Observer
+This was a feature that we really wanted to implement. The challenge: How can we added content on scroll? The simple answer was scroll events. The hard answer, let's use an Intersection Observer.
 
+**Attempt 1**
+```js
+    var statusBox = document.getElementById("statusBox");
+    var statusText = document.getElementById("statusText");
 
+    function handler(entries, observer) {
+      for (entry of entries) {
+        console.log(entry);
 
+        statusText.textContent = entry.isIntersecting;
+
+        if (entry.isIntersecting) {
+          statusBox.className = "yes";
+        } else {
+          statusBox.className = "no";
+        }
+      }
+    }
+
+    /* By default, invokes the handler whenever:
+       1. Any part of the target enters the viewport
+       2. The last part of the target leaves the viewport */
+
+    let observer = new IntersectionObserver(handler);
+    observer.observe(document.getElementById("target"));
+```
+
+Didn't go so well, using a lot of var and no consistency.
+
+**Attempt 2**
+
+```js
+if ('IntersectionObserver' in window) {
+    const checker = document.querySelector('.checker')
+    const articles = document.querySelector('.articles')
+    
+    // Append new articles to .articles
+    function addArticles(number) {
+        for (let i = 0; i < number; i++) {
+            let newArticle = document.createElement('article')
+            newArticle.classList.add('article', 'fade')
+            articles.appendChild(newArticle)
+          }
+    }
+
+    // Create new IntersectionObserver
+    const io = new IntersectionObserver(entries => {
+        if (entries[0].intersectionRatio <= 0) {
+            return
+        }
+
+        addArticles(1)
+        articles.appendChild(checker)
+    })
+
+    io.observe(checker)
+} else {
+    console.log(`Your browser doesn't support this`)
+
+    
+}
+```
+
+Trying out a couple of things, still using vars.
+
+**Fallback for Intersection Observer**
+```js 
+if ('IntersectionObserver' in window) {
+	//do something
+	} else {
+		// do something else
+}
+```
 
 
 <pre>.upload-form {
@@ -304,115 +377,7 @@ label {
 ### Linter
 ### Codeconvention
 
-<details>
-  <summary>Intersection Observer</summary>
-  
-</details>
 
-
-
-
-```js
-    var statusBox = document.getElementById("statusBox");
-    var statusText = document.getElementById("statusText");
-
-    function handler(entries, observer) {
-      for (entry of entries) {
-        console.log(entry);
-
-        statusText.textContent = entry.isIntersecting;
-
-        if (entry.isIntersecting) {
-          statusBox.className = "yes";
-        } else {
-          statusBox.className = "no";
-        }
-      }
-    }
-
-    /* By default, invokes the handler whenever:
-       1. Any part of the target enters the viewport
-       2. The last part of the target leaves the viewport */
-
-    let observer = new IntersectionObserver(handler);
-    observer.observe(document.getElementById("target"));
-```
-
-```js
-if ('IntersectionObserver' in window) {
-    const checker = document.querySelector('.checker')
-    const articles = document.querySelector('.articles')
-    
-    // Append new articles to .articles
-    function addArticles(number) {
-        for (let i = 0; i < number; i++) {
-            let newArticle = document.createElement('article')
-            newArticle.classList.add('article', 'fade')
-            articles.appendChild(newArticle)
-          }
-    }
-
-    // Create new IntersectionObserver
-    const io = new IntersectionObserver(entries => {
-        if (entries[0].intersectionRatio <= 0) {
-            return
-        }
-
-        addArticles(1)
-        articles.appendChild(checker)
-    })
-
-    io.observe(checker)
-} else {
-    console.log(`Your browser doesn't support this`)
-
-    
-}
-```
-
-
-```js
-if ('IntersectionObserver' in window) {
-
-const loadContentElement = function() {
-    const contentElements = document.querySelectorAll('.detail__content')
-    const config = {
-        rootMargin: '0px 0px 0px 0px',
-        threshold: 0.25
-    }
-    
-    let contentObserver = new IntersectionObserver(function(entries, self) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                console.log('in Viewport')
-                preloadContent(entry.target)
-                self.unobserve(entry.target)
-            } 
-        })
-    }, config )
-
-    contentElements.forEach(content => {
-        contentObserver.observe(content)
-    })
-
-    function preloadContent(content) {
-        const element = content.querySelector('.detail__content--container')
-        element.classList.add('visible')
-
-    }
-
-} 
-
-loadContentElement()
-
-} else {
-    const element = document.querySelectorAll('.detail__content--container')
-    for (let [i] of element.entries()) {
-        element[i].classList.add('visible') 
-    }
-
-}
-```
 
 
 ## Included school subjects
@@ -431,6 +396,17 @@ ES6, modules
 Userscenario's
 
 
-## Collaborators
+## Contributers
+
+| Contributer  | Github URL                       |
+|--------------|:-------------------------------: |
+| Mees         | https://github.com/meesrutten 	  |
+| Mo           | https://github.com/moniac        |
+| Niels        | https://github.com/NielsFS       |
+| Robin        | https://github.com/RobinFrugte97 |
+| Servin       | https://github.com/servinlp      |
+
+## License
+MIT
 
 
