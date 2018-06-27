@@ -11,8 +11,10 @@ About our client
 - [Planning](#planning)
     - [Scrum](#scrum)
     - [Briefings](#briefings)
+    - [Standups](#standups)
 - [Tooling](#tooling)
 - [Code](#code)
+- [After word](#after-word)
 
 ## How to install
 Clone the repo and save it on your local machine. In your terminal navigate to the main folder.
@@ -29,9 +31,9 @@ Now you're ready to run the project, if everything went according to plan then t
 ## Design Challenge
 Scheepvaart Museum is going to host a new exhibit about one of the most prestige ships in the Dutch sailing history called "oranje". During the kickoff they want to launch a online platform where people with a connection with the ship can share their story with the rest of the world.
 
-- [ ] Online responsive platform where people can upload their stories.
-- [ ] Images, audio and video files included in the story.
-- [ ] Users need to be able to respond to different stories (creating dialog)
+- [x] Online responsive platform where people can upload their stories.
+- [x] Images, audio and video files included in the story.
+- [x] Users need to be able to respond to different stories (creating dialog)
 
 ## Stakeholders
 - Scheepvaart Museum
@@ -51,7 +53,6 @@ Scheepvaart Museum is going to host a new exhibit about one of the most prestige
 ## Research
 During this project, I performed a competitor analysis and tested our platform on different devices.
 
-
 ### Competitor Analysis
 One of the researches I did was an analysis of competitors. This was so we could get a feel for what was out there, what other parties provided and what we had to do differently to stand out.
 
@@ -66,7 +67,6 @@ The first session showed us that a lot of older devices don't support Javascript
 
 > [link to research - Device Lab](https://github.com/moniac/meesterproef-scheepvaartmuseum/pull/143/files)
 
-
 ## Planning
 During the first briefing with Ernst we decided to tackle this project as a group. Since our group consisted of six people it was important that we had a good way to communicatie and keep track of all the to do's. 
 
@@ -78,6 +78,9 @@ Scrum was the best solution for us. We sat down and brainstormed about all the d
 ### Briefings
 As a group we figured that it would be in the best interest for the client, as well as for us to hold weekly briefings about our progress. This helped with our planning. Every thursday afternoon we would send a summary of our work in progress and every friday morning we sat down and discussed our next steps.
 > Notes about these meetings can be found inside my proces document.
+
+### Standups
+As part of our "how are we going to make this work with so many people in group" thought. We decided that we'd do daily standups. At the beginning of each day we would leave the classroom and discuss what we did the day before, what we were going to do and if there was anything else going on.
 
 ## Tooling
 Mo's tooling was a bit confusing for me at first. I was still struggling to get the hang of javascript and the team was a couple of steps ahead.
@@ -111,15 +114,156 @@ Push everything to the branch you're working on.
 <pre>git checkout branch "name of branch"</pre>
 Whenever you want to use a different branch
 
-
 ### Yarn
 Commands used for the project
 <pre>yarn install</pre>
+Install all the packages included in our project
 <pre>yarn build</pre>
+Build with the latest commits form everyone
 <pre>yarn dev</pre>
+Start the development envoirement
 <pre>yarn component flag-component</pre>
+With mo's awesome toolkit we could enter this command and all the files neccesary would be created within the correct folder with the correct names.
 
+### SCSS
+SASS or SCSS was something new to me. I had heard about it before, but never used it.
+Since this was a requirement for the development of the project I started learning how to implement is.
 
+Instead of writing CSS like this:
+```css 
+.report--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.report--container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.report--container form input[type=checkbox] {
+  display: none;
+}
+.report--container form input[type=checkbox] + label {
+  border: solid 1px crimson;
+  transition: all 100ms;
+  display: block;
+  width: 10rem;
+  margin: 0.5rem;
+  text-align: center;
+  padding: 0.2rem;
+}
+.report--container form input[type=checkbox]:checked + label {
+  border: solid 1px crimson;
+  background-color: crimson;
+  color: white;
+}
+.report--container form input[type=checkbox]:hover + label {
+  background-color: crimson;
+  color: white;
+}
+.report--container form button {
+  border: none;
+  background-color: crimson;
+  width: 5rem;
+  color: white;
+  height: 2rem;
+  transition: all 150ms ease-in-out;
+}
+.report--container form button:hover {
+  background-color: #a40f2d;
+}
+
+.report--container--checkboxes {
+  display: flex;
+}
+
+.no-js .report--submit--btn {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+```
+
+I could write SCSS like this:
+```css
+$prime-color: #dc143c;
+$second-color: #a40f2d;
+
+* {
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.report-component {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	form {
+		dislay: flex;
+		flex-direction: column;
+		align-items: center
+
+		input[type="checkbox"] {
+			display: none;
+
+			&+ label {
+				border: solid 1px crimson;
+				transition: all 100ms;
+				display: block;
+				width: 10rem;
+				margin: 0.5rem;
+				text-align: center;
+				padding: 0.2rem;
+
+				&:checked {
+					&+ label {
+						border: solid 1px crimson;
+						background-color: crimson;
+						color: white;
+					}
+				}
+
+				&:hover {
+					&+ label {
+						background-color: crimson;
+						color: white;
+					}
+				}
+			}
+			
+			button {
+				border: none;
+				background-color: crimson;
+				width: 5rem;
+				color: white;
+				height: 2rem;
+				transition: all 150ms ease-in-out;
+
+				&:hover {
+					background-color:#a40f2d;
+				}
+			}
+		}
+	}
+}
+
+.report-checkboxes-container {
+	display: flex;
+}
+
+.no-js #report-submit-btn {
+  display: block;
+}
+
+.hidden {
+/*  display: none;*/
+}
+```
 
 ## Code
 For this project I've created a couple of components each with a different focus.
@@ -414,6 +558,11 @@ The idea was for users to input information step by step in a way that didn't fe
 Even though in the end my code wasn't used, the concept started to live. Servin and Mees made a beautifull input field.
 I hope that one day my form is as fluid as theirs.
 
+## After word
+In conclusion I'd like to reflect on the five weeks working with a group of six classmates. At first I wasn't so sure if it was an good idea for me to work in a group. Because half of the class is farther in terms of code and I believed working in a group would make it that much harder.
+
+At the end it was just as I inmagined, it was harder, more confusing, and at times it was really frustrating. But I've learned so much from my team. I learned how to work with really specialized tooling, I've learned how to work how to write SCSS. Whenever I've writtin some JavaScript I could ask for feedback and I would always learn something new, something better. I believe our team worked very well together, we communicated, we helped and we had fun. We did good.
+
 ## Contributers
 
 | Contributer  | Github URL                       |
@@ -426,5 +575,3 @@ I hope that one day my form is as fluid as theirs.
 
 ## License
 MIT
-
-
