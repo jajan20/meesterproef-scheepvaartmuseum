@@ -73,7 +73,7 @@ During the first briefing with Ernst we decided to tackle this project as a grou
 ### Scrum
 Scrum was the best solution for us. We sat down and brainstormed about all the different aspects the project would need. Later we used the Trello service to better track everything.
 
-![](/Users/jamie/Downloads/scrum.jpg)
+![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/scrum.jpg?raw=true)
 
 ### Briefings
 As a group we figured that it would be in the best interest for the client, as well as for us to hold weekly briefings about our progress. This helped with our planning. Every thursday afternoon we would send a summary of our work in progress and every friday morning we sat down and discussed our next steps.
