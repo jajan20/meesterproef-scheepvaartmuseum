@@ -265,6 +265,14 @@ $second-color: #a40f2d;
 }
 ```
 
+## Concept Design
+One of the first concepts I made.
+
+| Detail add content            |  Detail page            | Overview page. |
+:-------------------------:|:-------------------------:|:-------------------------:
+![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/detail-add-content.png?raw=true)  |  ![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/detail-page.png?raw=true)  |  ![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/overview-page.png?raw=true)  
+
+
 ## Code
 For this project I've created a couple of components each with a different focus.
 
@@ -575,3 +583,5 @@ At the end it was just as I inmagined, it was harder, more confusing, and at tim
 
 ## License
 MIT
+
+
