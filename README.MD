@@ -131,6 +131,12 @@ For this project I've created a couple of components each with a different focus
 > [page-detail](https://github.com/moniac/meesterproef-scheepvaartmuseum/compare/page-detail-jamie?expand=1)
 
 ### Report Component
+
+- [x] CSS to the rescue
+- [x] Webdesign
+
+![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/report-component.png?raw=true)
+
 One of the features that was very important to our client was the abillity to flag inapropriate and incorrect content.
 This could mean that someone used language that ins't suited for the website or that something wasn't historical correct. 
 
@@ -267,6 +273,12 @@ Nothing fancy with Javascript just clean CSS
 ```
 
 ### Intersection Observer
+- [x] Web app from scratch
+- [x] Webdesign
+- [x] Browsertech
+
+![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/intersection-observer.png?raw=true)
+
 This was a feature that we really wanted to implement. The challenge: How can we added content on scroll? The simple answer was scroll events. The hard answer, let's use an Intersection Observer.
 
 **Attempt 1**
@@ -327,8 +339,6 @@ if ('IntersectionObserver' in window) {
     io.observe(checker)
 } else {
     console.log(`Your browser doesn't support this`)
-
-    
 }
 ```
 
@@ -343,63 +353,71 @@ if ('IntersectionObserver' in window) {
 }
 ```
 
-
-<pre>.upload-form {
-    font-family: 'Poppins', sans-serif;
-    margin: 0.5rem;
-    
-    input {
-        font-family: 'Poppins', sans-serif;
-        padding: 0.3rem;
-        font-size: 0.8rem;
-        width: 10rem;
-        border: solid 1px $primary-textColor;
-        background-color: $primary-background;
-        color: $primary-textColor;
-
-        &.button {
-            margin: 0.5rem 0 0 0;
-            background-color: $primary-background;
-
-            &:hover {
-                background-color: $primary-textColor;
-                color: $primary-background;
-            }
-        }
-    }
+**Final code**
+```js
+function enhancedDetailInit() {
+	if ( ! ( document.querySelector( '.detail__content' ) && document.querySelector( '.detail__content--container' ) ) ) return
+	if ( 'IntersectionObserver' in window ) {
+		enhancedDetail()
+	} else {
+		fallbackDetail()
+	}
 }
 
-label {
-    margin-top: 1rem;
-}</pre>
+function enhancedDetail() {
+	const contentElements = Array.from( document.querySelector( '.detail__content--container' ).children )
+	const config = {
+		rootMargin: '0px 0px 0px 0px',
+		threshold: 0.25
+	}
 
-### ES6
-### Linter
-### Codeconvention
+	const contentObserver = new IntersectionObserver( ( entries, self ) => {
+		entries.forEach( entry => {
+			if ( entry.isIntersecting ) {
+				preloadContent( entry.target )
+				self.unobserve( entry.target )
+			}
+		} )
+	}, config )
+
+	contentElements.forEach( content => {
+		contentObserver.observe( content )
+	} )
+
+	function preloadContent( content ) {
+		content.classList.add( 'visible' )
+	}
+}
 
 
+function fallbackDetail() {
+	const element = document.querySelectorAll( '.detail__content' )
+	for ( const [ i ] of element.entries() ) {
+		element[ i ].classList.add( 'visible' )
+	}
+}
 
 
-## Included school subjects
-For the final assignment, we had to include at least four of the subjects we finished before starting the "Meesterproef"
+export {
+	selectComponents
+}
+```
 
-### Browser tech
-Performance
+No more vars in the code, using functions to implement modules. Tried experimenting with fancy new ES6 code and writtin according our code conventions.
 
-### CSS to the rescue
-Correct use of CSS
+### Natural Language Form
+One of the components I've worked on but where my code came up short is the natural language form.
+The idea was for users to input information step by step in a way that didn't feel slow and confusing.
 
-### Web app from scratch
-ES6, modules
+![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/natural-language-form.png?raw=true)
 
-### Webdesign
-Userscenario's
-
+Even though in the end my code wasn't used, the concept started to live. Servin and Mees made a beautifull input field.
+I hope that one day my form is as fluid as theirs.
 
 ## Contributers
 
 | Contributer  | Github URL                       |
-|--------------|:-------------------------------: |
+|--------------|:-------------------------------  |
 | Mees         | https://github.com/meesrutten 	  |
 | Mo           | https://github.com/moniac        |
 | Niels        | https://github.com/NielsFS       |
