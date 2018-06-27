@@ -1,10 +1,15 @@
-## Scheepvaart Museum
-About our client
+## Design Challenge
+Scheepvaart Museum is going to host a new exhibit about one of the most prestige ships in the Dutch sailing history called "oranje". During the kickoff they want to launch a online platform where people with a connection with the ship can share their story with the rest of the world.
+
+- [x] Online responsive platform where people can upload their stories.
+- [x] Images, audio and video files included in the story.
+- [x] Users need to be able to respond to different stories (creating dialog)
 
 ## Table of Contents
-- [How to install](#how-to-install)
 - [Design Challenge](#design-challenge)
+- [How to install](#how-to-install)
 - [Stakeholders](#stakeholders)
+- [Features](#features)
 - [Research](#research)
     - [Competitor Analysis](#competitor-analysis)
     - [Device Lab](#device-lab)
@@ -13,8 +18,16 @@ About our client
     - [Briefings](#briefings)
     - [Standups](#standups)
 - [Tooling](#tooling)
+	- [Github](#github)
+	- [Yarn](#yarn)
+	- [SCSS](#scss)
+- [Concepting](#concepting)
 - [Code](#code)
+	- [Report Component](#report-component)
+	- [Intersection Observer](#intersection-observer)
+	- [Natural Language Form](#natural-language-form)
 - [After word](#after-word)
+- [Contributers](#contributers)
 
 ## How to install
 Clone the repo and save it on your local machine. In your terminal navigate to the main folder.
@@ -27,13 +40,6 @@ Now all the other dependencies will be downloaded to your computer.
 Build the project, using our tooling to set the correct files.
 <pre>yarn dev</pre>
 Now you're ready to run the project, if everything went according to plan then the project should be running on **localhost:8000**
-
-## Design Challenge
-Scheepvaart Museum is going to host a new exhibit about one of the most prestige ships in the Dutch sailing history called "oranje". During the kickoff they want to launch a online platform where people with a connection with the ship can share their story with the rest of the world.
-
-- [x] Online responsive platform where people can upload their stories.
-- [x] Images, audio and video files included in the story.
-- [x] Users need to be able to respond to different stories (creating dialog)
 
 ## Stakeholders
 - Scheepvaart Museum
@@ -265,13 +271,23 @@ $second-color: #a40f2d;
 }
 ```
 
-## Concept Design
+## Concepting
 One of the first concepts I made.
 
 | Detail add content            |  Detail page            | Overview page. |
 :-------------------------:|:-------------------------:|:-------------------------:
-![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/detail-add-content.png?raw=true)  |  ![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/detail-page.png?raw=true)  |  ![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/overview-page.png?raw=true)  
+![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/detail-add-content.png?raw=true)  |  ![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/detail-page.png?raw=true)  |  ![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/overview-page.png?raw=true)
 
+After some feedback and new inspiration I came up with a different design
+
+| Redesign            |             
+:-------------------------:|:-------------------------:
+![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/upper-left.png?raw=true)  |  ![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/upper-right.png?raw=true)  
+![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/bottom-left.png?raw=true)  |  ![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/bottom-right.png?raw=true)
+
+This design was a bit ambitious of me, and ultimatly got turned down by the group. They liked the design but with the time we had it wasn't possible.
+
+> Sketches can be found in my proces document
 
 ## Code
 For this project I've created a couple of components each with a different focus.
@@ -583,5 +599,3 @@ At the end it was just as I inmagined, it was harder, more confusing, and at tim
 
 ## License
 MIT
-
-
