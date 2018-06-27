@@ -280,10 +280,10 @@ One of the first concepts I made.
 
 After some feedback and new inspiration I came up with a different design
 
-| Redesign            |             
+| Redesign left side            |            Redesign right side 
 :-------------------------:|:-------------------------:
-![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/upper-left.png?raw=true)  |  ![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/upper-right.png?raw=true)  
-![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/bottom-left.png?raw=true)  |  ![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/bottom-right.png?raw=true)
+![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/upper-left.png?raw=true)  |  ![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/upper-right.png?raw=true)  |
+![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/bottom-left.png?raw=true)  |  ![](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/src/images/bottom-right.png?raw=true) |
 
 This design was a bit ambitious of me, and ultimatly got turned down by the group. They liked the design but with the time we had it wasn't possible.
 
