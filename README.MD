@@ -13,6 +13,7 @@ Scheepvaart Museum is going to host a new exhibit about one of the most prestige
 - [Research](#research)
     - [Competitor Analysis](#competitor-analysis)
     - [Device Lab](#device-lab)
+    - [User test](#user-test)
 - [Planning](#planning)
     - [Scrum](#scrum)
     - [Briefings](#briefings)
@@ -73,6 +74,11 @@ Once our platform was hosted online I could use the device lab to perform a coup
 The first session showed us that a lot of older devices don't support Javascript. The styling of a lot of elements changed when viewed in older browsers.
 
 > [link to research - Device Lab](https://github.com/moniac/meesterproef-scheepvaartmuseum/pull/143/files)
+
+### User test
+For our user test I've created a couple of scenario's and a script to follow so that our testers felt comfortable.
+
+> [Link to usertest](https://github.com/jajan20/meesterproef-scheepvaartmuseum/blob/master/testplan-scheepvaart.md)
 
 ## Planning
 During the first briefing with Ernst, we decided to tackle this project as a group. Since our group consisted of six people it was important that we had a good way to communicate and keep track of all the to do's. 
